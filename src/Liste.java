@@ -40,6 +40,10 @@ public class Liste {
                 choixString=sc.next();
                 if(map.get(choixString)!=null) {
                     map.get(choixString).modifierContact();
+                    if(!choixString.equals(map.get(choixString).getPrenom())){
+                        map.put(map.get(choixString).getPrenom(),map.get(choixString));
+                        map.remove(choixString);
+                    }
                 }
                 else{
                     System.out.println("ERREUR: Le contact n'existe pas");
@@ -85,7 +89,7 @@ public class Liste {
                 System.exit(0);
                 break;
             default:
-                System.out.println("ERREUR: Entrez un choix valide (entre 1 et 4)");
+                System.out.println("ERREUR: Entrez un choix valide (entre 1 et 7)");
                 break;
         }
     }
